@@ -28,8 +28,8 @@ const main = async () => {
 
     let data = await dbConnect();
     data = await data.find({}).toArray();
-    console.log(data);
-    console.log("main function called ")
+    // console.log(data);
+    // console.log("main function called ")
 }
 main();
 
