@@ -6,17 +6,17 @@ const url = "mongodb+srv://admin:admin@cluster0.cfg2fvd.mongodb.net/test";
 const dataBase = "e-comm";
 const client = new MongoClient(url);
 
-const getData = async () => {
+const dbConnect = async () => {
     let result = await client.connect();
     let db = result.db(dataBase);
-    let collection = db.collection("products");
-    let response = await collection.find({ name: "zaid" }).toArray();
-    console.log(response);
+    return db.collection("products");
+    // let response = await collection.find({}).toArray();
+    // console.log(response);
 
 }
 
-getData();
-
+dbConnect();
+console.log(dbConnect());
 
 
 
