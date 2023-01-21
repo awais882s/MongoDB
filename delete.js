@@ -6,7 +6,10 @@ const deleteData = async () => {
         { name: "Solutions point" },
     )
     console.log(result);
-    console.log("Data has Been Deleted");
+    if (result.acknowledged) {
+        console.log("Data has Been Deleted");
+
+    }
 }
 
 deleteData();
