@@ -15,7 +15,11 @@ const dbConnect = async () => {
 
 }
 
-dbConnect();
+dbConnect().then((res) => {
+    res.find().toArray().then((data) => {
+        console.log(data);
+    })
+});
 console.log(dbConnect());
 
 
