@@ -14,18 +14,22 @@ const dbConnect = async () => {
     // console.log(response);
 
 }
-
+// * To handke promise 1st way to resolve the promise
 dbConnect().then((res) => {
     res.find().toArray().then((data) => {
         console.log(data);
     })
 });
 console.log(dbConnect());
+// * Second Method is use to resolve the promise
+const main = async () => {
 
-const main = () => {
+    let data = await dbConnect();
+    data = await data.find({}).toArray();
+    console.log(data);
     console.log("main function called ")
 }
-
+main();
 
 
 // This code give by Chatgpt
