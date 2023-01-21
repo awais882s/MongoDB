@@ -1,18 +1,18 @@
 const { MongoClient } = require("mongodb");
 // *============or=======================
-// const mongoClient = require("mongodb").MongoClient;
+// // const mongoClient = require("mongodb").MongoClient;
+const url = "mongodb+srv://admin:admin@cluster0.cfg2fvd.mongodb.net/test";
 
-const url = "mongodb+srv://admin:admin@cluster0.dvpabex.mongodb.net/test";
 const dataBase = "e-comm";
 const client = new MongoClient(url);
 
-
-async function getData() {
+const getData = async () => {
     let result = await client.connect();
     let db = result.db(dataBase);
     let collection = db.collection("products");
     let response = await collection.find({}).toArray();
     console.log(response);
+
 }
 
 getData();
@@ -21,6 +21,7 @@ getData();
 
 
 
+// This code give by Chatgpt
 // const { MongoClient } = require('mongodb');
 
 // // Connect to MongoDB
