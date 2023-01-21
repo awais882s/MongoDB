@@ -2,6 +2,10 @@ const dbConnect = require("./mongodb");
 
 const update = async () => {
     let db = await dbConnect();
-    console.log(db);
+    let result = await db.updateOne(
+        { name: "Soni Chasmato" },
+        { $set: { name: "HeartBeat" } }
+    )
+    console.log(result);
 }
 update();
