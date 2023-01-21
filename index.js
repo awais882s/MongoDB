@@ -10,7 +10,7 @@ const getData = async () => {
     let result = await client.connect();
     let db = result.db(dataBase);
     let collection = db.collection("products");
-    let response = await collection.find({}).toArray();
+    let response = await collection.find({ name: "zaid" }).toArray();
     console.log(response);
 
 }
