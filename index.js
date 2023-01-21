@@ -22,6 +22,9 @@ dbConnect().then((res) => {
 });
 console.log(dbConnect());
 
+const main = () => {
+    console.log("main function called ")
+}
 
 
 
