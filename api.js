@@ -18,19 +18,19 @@ app.post("/", async (req, res) => {
     console.log(req.body);
     let data = await dbConect();
     let result = await data.insertMany(req.body);
-    res.send(result);
+    res.send("Data has been added");
 });
 // put methods is use to update database 
 
 
-app.put("/", async (req, res) => {
+app.put("/:name", async (req, res) => {
     console.log(req.body);
     let data = await dbConect();
     let result = await data.updateOne(
-        { name: "lover s" },
-        { $set: { name: "lovers update" } }
+        { name: req.params.name },
+        { $set: req.body }
     );
     console.log("data updateed")
-    res.send({ name: "awais iqbal" })
+    res.send({ name: "Data Updated" })
 })
 app.listen(4000);
