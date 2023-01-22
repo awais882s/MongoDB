@@ -14,8 +14,10 @@ app.get("/", async (req, res) => {
 // convert data in JSON format
 app.use(express.json());
 
-app.post("/", (req, res) => {
-    console.log(req.body)
-    res.send({ name: "awais" });
+app.post("/", async (req, res) => {
+    console.log(req.body);
+    let data = await dbConect();
+    let result = await data.insertMany(req.body);
+    res.send(result);
 });
 app.listen(4000);
