@@ -20,4 +20,10 @@ app.post("/", async (req, res) => {
     let result = await data.insertMany(req.body);
     res.send(result);
 });
+// put methods is use to update database 
+
+
+app.put("/", (req, res) => {
+    res.send({ name: "awais iqbal" })
+})
 app.listen(4000);
