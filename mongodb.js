@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 // *============or=======================
-// // const mongoClient = require("mongodb").MongoClient;
+// const mongoClient = require("mongodb").MongoClient;
 const url = "mongodb+srv://admin:admin@cluster0.cfg2fvd.mongodb.net/test";
 
 const dataBase = "e-comm";
@@ -16,7 +16,7 @@ const dbConnect = async () => {
 }
 
 
-// // * To handke promise 1st way to resolve the promise
+//  To handke promise 1st way to resolve the promise
 // dbConnect().then((res) => {
 //     res.find().toArray().then((data) => {
 //         console.log(data);
