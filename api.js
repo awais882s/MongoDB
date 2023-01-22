@@ -10,7 +10,12 @@ app.get("/", async (req, res) => {
 })
 // post methods is use to save data in database
 
+
+// convert data in JSON format
+app.use(express.json());
+
 app.post("/", (req, res) => {
+    console.log(req.body)
     res.send({ name: "awais" });
 });
 app.listen(4000);
