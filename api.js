@@ -4,8 +4,8 @@ const app = express();
 
 app.get("/", async (req, res) => {
     let data = await dbConect();
-    data = await data.find({}).toArray();
-    console.log(data);
+    let result = await data.find({}).toArray();
+    console.log(result);
     res.send({ name: "awais" });
 })
 
