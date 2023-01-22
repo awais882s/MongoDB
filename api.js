@@ -24,6 +24,7 @@ app.post("/", async (req, res) => {
 
 
 app.put("/", (req, res) => {
+    console.log(req.body);
     res.send({ name: "awais iqbal" })
 })
 app.listen(4000);
