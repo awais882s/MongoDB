@@ -6,7 +6,7 @@ app.get("/", async (req, res) => {
     let data = await dbConect();
     let result = await data.find({}).toArray();
     console.log(result);
-    res.send({ name: "awais" });
+    res.send(result);
 })
 
 app.listen(4000);
