@@ -23,8 +23,14 @@ app.post("/", async (req, res) => {
 // put methods is use to update database 
 
 
-app.put("/", (req, res) => {
+app.put("/", async (req, res) => {
     console.log(req.body);
+    let data = await dbConect();
+    let result = await data.updateOne(
+        { name: "lover s" },
+        { $set: { name: "lovers update" } }
+    );
+    console.log("data updateed")
     res.send({ name: "awais iqbal" })
 })
 app.listen(4000);
